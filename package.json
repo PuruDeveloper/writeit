@@ -1,0 +1,21 @@
+{
+  "name": "writeit",
+  "version": "1.0.0",
+  "description": "A website to store all text and image in one place and update it at any time from any application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Purushottam Mishra",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.13",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.0"
+  },
+  "engines": ">=10.0.0"
+}
