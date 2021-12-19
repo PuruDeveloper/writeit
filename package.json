@@ -6,11 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "client": "cd public && npm start",
+    "start": "concurrently \"node server.js\" \"npm run client\""
   },
   "author": "Purushottam Mishra",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^6.5.0",
+    "create-react-app": "^5.0.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.13",
