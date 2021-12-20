@@ -71,3 +71,23 @@ exports.deleteUser = async (req, res) => {
     });
   }
 };
+
+exports.updateUser = async (req, res) => {
+  try {
+    const subdomain = req.params.subdomain;
+    const update = req.body;
+    const user = await Userwrites.findOneAndUpdate(
+      { subdomain: subdomain },
+      update
+    );
+    res.status(201).json({
+      status: "success",
+      message: "The user data is updated",
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: "fail",
+      message: err,
+    });
+  }
+};

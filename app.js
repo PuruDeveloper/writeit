@@ -11,6 +11,6 @@ const server = http.createServer(app);
 
 app.use(express.static(`${__dirname}/public`));
 
-app.use("/api/", userRoute);
+app.use("/api", userRoute);
 
 module.exports = app;

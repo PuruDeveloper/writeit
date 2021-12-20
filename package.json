@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
     "client": "cd public && npm start",
-    "start": "concurrently \"node server.js\" \"npm run client\""
+    "dev": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "start": "concurrently \"set NODE_ENV=production\" \"node server.js\" \"npm run client\""
   },
   "author": "Purushottam Mishra",
   "license": "ISC",

@@ -4,9 +4,11 @@ const {
   getUser,
   createSubDomain,
   deleteUser,
+  updateUser,
 } = require("../controlllers/userController");
 
 const router = express.Router();
+
 router.route("/").get((req, res) => {
   res.status(200).json({
     status: "success",
@@ -15,6 +17,10 @@ router.route("/").get((req, res) => {
 });
 router.route("/create").post(createSubDomain);
 router.route("/users").get(getAllUsers);
-router.route("/users/:subdomain").get(getUser).delete(deleteUser).patch();
+router
+  .route("/users/:subdomain")
+  .get(getUser)
+  .delete(deleteUser)
+  .patch(updateUser);
 
 module.exports = router;

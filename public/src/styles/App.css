@@ -1,0 +1,18 @@
+body {
+  background-color: #191919;
+  color: white;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+button {
+  min-width: 100px;
+  min-height: 40px;
+  border-radius: 8px;
+  margin: 4px;
+  border: none;
+  outline: none;
+}

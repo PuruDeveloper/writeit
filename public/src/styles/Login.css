@@ -1,0 +1,21 @@
+.login-card {
+  margin: 0 auto;
+  margin-top: 20%;
+  text-align: center;
+  position: relative;
+  padding-top: 20px;
+  background-color: rgb(83, 79, 79);
+  min-height: 250px;
+  max-width: 250px;
+}
+
+.login-label {
+  font-weight: 500;
+}
+
+.login-input {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
