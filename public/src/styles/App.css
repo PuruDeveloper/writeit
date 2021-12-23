@@ -1,5 +1,5 @@
 body {
-  background-color: #191919;
+  background-color: #501b4a;
   color: white;
 }
 
@@ -9,6 +9,8 @@ a {
 }
 
 button {
+  background-color: #501b4a;
+  color: #3eb9bb;
   min-width: 100px;
   min-height: 40px;
   border-radius: 8px;

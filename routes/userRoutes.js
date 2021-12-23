@@ -7,7 +7,14 @@ const {
   updateUser,
 } = require("../controlllers/userController");
 
-const { login, signup, protect } = require("../controlllers/authController");
+const {
+  login,
+  signup,
+  protectAllUsers,
+  protect,
+  protectDelete,
+  protectRoleUpdate,
+} = require("../controlllers/authController");
 
 const router = express.Router();
 
@@ -22,11 +29,11 @@ router.post("/signup", signup);
 router.post("/login", login);
 
 router.route("/create").post(createSubDomain);
-router.route("/users").get(protect, getAllUsers);
+router.route("/users").get(protectAllUsers, getAllUsers);
 router
   .route("/users/:subdomain")
   .get(protect, getUser)
-  .delete(deleteUser)
-  .patch(updateUser);
+  .delete(protectDelete, deleteUser)
+  .patch(protectRoleUpdate, updateUser);
 
 module.exports = router;

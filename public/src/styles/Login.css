@@ -4,13 +4,15 @@
   text-align: center;
   position: relative;
   padding-top: 20px;
-  background-color: rgb(83, 79, 79);
+  background-color: #3eb9bb;
+  color: #501b4a;
   min-height: 250px;
   max-width: 250px;
+  box-shadow: 0px -1px 4px 4px #3ba0a2;
 }
 
 .login-label {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .login-input {

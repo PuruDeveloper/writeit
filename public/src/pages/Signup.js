@@ -15,7 +15,7 @@ function Signup() {
           <br></br>
           <input className="login-input" type="text" placeholder="password" />
           <br></br>
-          <button>Create subdomain</button>
+          <button>SignUp</button>
         </form>
       </div>
     </div>
