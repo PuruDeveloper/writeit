@@ -22,8 +22,15 @@ exports.getAllUsers = async (req, res) => {
 //GET INDIVIDUAL USER BY SUBDOMAIN
 exports.getUser = async (req, res) => {
   try {
-    const subdomain = req.params.subdomain;
-    const user = await Userwrites.find({ subdomain: subdomain });
+    // const subdomain = req.params.subdomain;
+    //By doing this the user can only access the data of the account he has logged in with
+    const user = await Userwrites.findById(req.userid);
+    if (user.length === 0) {
+      return res.status(400).json({
+        status: "fail",
+        message: "No such subdomain exists",
+      });
+    }
     res.status(200).json({
       status: "success",
       data: {

@@ -8,16 +8,16 @@ import UserPage from "./pages/UserPage";
 import Home from "./pages/Home";
 
 function App() {
-  useEffect(() => {
-    fetch("/api/")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => console.log(data))
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+  // useEffect(() => {
+  //   fetch("/api/")
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then((data) => console.log(data))
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // });
   return (
     <div className="App">
       <Routes>

@@ -5,12 +5,22 @@ function Login() {
   const [password, setPassword] = useState("");
   const [subDomain, setSubDomain] = useState("");
 
-  const userLogin = (e) => {
+  const userLogin = async (e) => {
     e.preventDefault();
     if (subDomain && password) {
       console.log(subDomain, password);
       setSubDomain("");
       setPassword("");
+      await fetch(`/api/users/${subDomain}`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data.data.user[0]);
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
     } else {
       alert("Enter both subDomain and password");
     }
@@ -41,7 +51,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
           <br></br>
-          <button onClick={(e) => userLogin(e)}>Access my subdomain</button>
+          <button onClick={(e) => userLogin(e)}>LOGIN</button>
         </form>
       </div>
     </div>

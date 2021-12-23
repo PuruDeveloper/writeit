@@ -7,6 +7,11 @@ const userSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
+  role: {
+    type: String,
+    enum: ["admin", "user"],
+    default: "user",
+  },
   password: {
     type: String,
     required: [true, "A password is must to secure your subdomain"],
@@ -19,6 +24,13 @@ const userSchema = new mongoose.Schema({
     default: "",
   },
 });
+
+userSchema.methods.correctPassword = function (
+  candidatePassword,
+  userPassword
+) {
+  return candidatePassword === userPassword;
+};
 
 const Userwrite = mongoose.model("Userwrite", userSchema);
 
